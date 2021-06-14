@@ -1,3 +1,5 @@
+appnope==0.1.2
+backcall==0.2.0
 certifi==2020.12.5
 chardet==4.0.0
 click==7.1.2
@@ -9,14 +11,22 @@ escapism==1.0.1
 gitdb==4.0.7
 GitPython==3.1.15
 idna==2.10
+ipython==7.16.1
 ipython-genutils==0.2.0
+jedi==0.18.0
 Jinja2==3.0.0
 jupyter-repo2docker==2021.3.0
 MarkupSafe==2.0.0
+parso==0.8.2
 pathtools==0.1.2
+pexpect==4.8.0
+pickleshare==0.7.5
 promise==2.3
+prompt-toolkit==3.0.18
 protobuf==3.16.0
 psutil==5.8.0
+ptyprocess==0.7.0
+Pygments==2.9.0
 python-dateutil==2.8.1
 python-json-logger==2.0.1
 PyYAML==5.4.1
@@ -33,5 +43,6 @@ toml==0.10.2
 traitlets==4.3.3
 typing-extensions==3.10.0.0
 urllib3==1.26.4
--e git+https://github.com/wandb/client.git@345f648bd6a3d918efcef4fbfcc2cae96714dcfa#egg=wandb
+-e git+https://github.com/wandb/client.git@8ee3607e3779f4f8c6e6a65cc2165f0fb359bfab#egg=wandb
+wcwidth==0.2.5
 websocket-client==0.59.0
