@@ -43,6 +43,6 @@ toml==0.10.2
 traitlets==4.3.3
 typing-extensions==3.10.0.0
 urllib3==1.26.4
--e git+https://github.com/wandb/client.git@e814a4a6d927bb53aaf7ef6dfd8aafad19f21392#egg=wandb
+-e git+https://github.com/wandb/client.git@356a88add3bf9f4c547c8083c7a878470d384961#egg=wandb
 wcwidth==0.2.5
 websocket-client==0.59.0
