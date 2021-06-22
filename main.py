@@ -9,7 +9,7 @@ args = parser.parse_args()
 
 wandb.init(project="launch-demo10")
 for i in range(100):
-    time.sleep(0.5)
+    #time.sleep(0.5)
     wandb.run.config["val1"] = 10
     wandb.run.config["val2"] = 20
     wandb.run.config["lr"] = args.lr
