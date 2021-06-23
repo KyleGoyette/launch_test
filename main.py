@@ -11,6 +11,7 @@ args = parser.parse_args()
 wandb.init(project="launch-demo2")
 wandb.run.config["lr"] = args.lr
 wandb.run.config["epochs"] = args.epochs
+wandb.run.config["accs"] = args.accs
 for i in range(wandb.run.config.epochs):
     wandb.log({"loss": 1/wandb.config.lr})
     if wandb.run.config.accs:
