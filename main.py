@@ -8,7 +8,7 @@ parser.add_argument("--epochs", type=float, default=5)
 parser.add_argument("--accs", action="store_true")
 args = parser.parse_args()
 
-wandb.init(project="launch-demo11")
+wandb.init(project="launch-demo2")
 wandb.run.config["lr"] = args.lr
 wandb.run.config["flag"] = args.flag
 wandb.run.config["epochs"] = args.epochs
