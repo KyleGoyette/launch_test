@@ -4,7 +4,7 @@ import argparse
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--lr", type=float, default=0.1)
-parser.add_argument("--epochs", type=float, default=5)
+parser.add_argument("--epochs", type=int, default=5)
 parser.add_argument("--accs", action="store_true")
 args = parser.parse_args()
 
