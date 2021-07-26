@@ -1,11 +1,12 @@
 import wandb
 import argparse
 import math
+import time
 import random
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--lr", type=float, default=0.1)
-parser.add_argument("--epochs", type=int, default=5)
+parser.add_argument("--epochs", type=int, default=15)
 parser.add_argument("--seed", type=int, default=10)
 args = parser.parse_args()
 
@@ -25,6 +26,7 @@ random.seed(run.config.seed)
 displacement1 = random.random()
 displacement2 = random.random()
 for step in range(run.config.epochs):
+    time.sleep(2)
     wandb.log({
         "acc": 0.04 * (math.log(1 + step + random.random()) + random.random() * run.config.learning_rate + random.random() + displacement1 + random.random() * run.config.momentum),
         "val_acc": 0.04 * (math.log(1 + step + random.random()) + random.random() * run.config.learning_rate - random.random() + displacement1),
