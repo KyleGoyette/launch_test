@@ -27,7 +27,6 @@ random.seed(run.config.seed)
 displacement1 = random.random()
 displacement2 = random.random()
 for step in range(run.config.epochs):
-    time.sleep(2)
     wandb.log({
         "acc": 0.04 * (math.log(1 + step + random.random()) + random.random() * run.config.learning_rate + random.random() + displacement1 + random.random() * run.config.momentum),
         "val_acc": 0.04 * (math.log(1 + step + random.random()) + random.random() * run.config.learning_rate - random.random() + displacement1),
