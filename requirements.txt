@@ -1,3 +1,2 @@
-git+git://github.com/wandb/client.git@feature/wandb-launch
-numpy
-torch
+click==7.1.2
+gitpython==3.1.14
