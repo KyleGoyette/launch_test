@@ -1,2 +1,2 @@
-click==7.1.2
-gitpython==3.1.14
+git+https://github.com/wandb/client.git@feature/wandb-launch
+numpy
