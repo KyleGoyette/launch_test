@@ -29,6 +29,7 @@ displacement2 = random.random()
 artifact = wandb.Artifact('my-dataset', type='dataset')
 artifact.add_file('my-dataset.txt')
 run.log_artifact(artifact)
+run.config.dataset = artifact
 for step in range(run.config.epochs):
     wandb.log({
         "acc": 0.04 * (math.log(1 + step + random.random()) + random.random() * run.config.learning_rate + random.random() + displacement1 + random.random() * run.config.momentum),
