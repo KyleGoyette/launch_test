@@ -28,7 +28,7 @@ np.random.seed(run.config.seed)
 
 dataset = run.use_artifact('launch-arti-demo/my-orig-dataset:latest')
 run.config.dataset = dataset
-
+print(run.config.dataset)
 if run.config.dataset.name == 'my-new-dataset:v0':
     const = 0.5
 else:

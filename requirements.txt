@@ -1,2 +1,2 @@
-git+https://github.com/wandb/client.git@k/redo-arti-slot
+git+https://github.com/wandb/client@k/redo-arti-slot
 numpy
