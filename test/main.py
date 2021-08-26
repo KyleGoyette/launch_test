@@ -26,16 +26,14 @@ run = wandb.init(
 
 np.random.seed(run.config.seed)
 
-dataset = run.use_artifact('launch-arti-demo/my-orig-dataset:latest')
-run.config.dataset = dataset
-print(run.config.dataset)
-if run.config.dataset.name == 'my-new-dataset:v0':
+dataset = run.use_artifact('my-orig-dataset:latest', ds_slot_name='dataset')
+if dataset.name == 'my-new-dataset:v0':
+    print("Using my-new-dataset")
     const = 0.5
 else:
     const = 0
-
-displacement1 = np.random.uniform(0, 0.5) + const
-displacement2 = np.random.uniform(0.5, 1) - const
+displacement1 = np.random.uniform(0, 5) + const
+displacement2 = np.random.uniform(5, 10) - const
 
 for step in range(5):
     wandb.log({
@@ -45,3 +43,4 @@ for step in range(5):
         "val_loss": 0.04 * (5 - math.log(1 + step + random.random()) + random.random() * run.config.learning_rate - random.random() + displacement2),
         "train_step": step*25
     })
+
