@@ -3,13 +3,25 @@ import argparse
 import math
 import numpy as np
 import random
-
+import os
+import json
 
 parser = argparse.ArgumentParser()
 parser.add_argument("--lr", type=float, default=0.1)
 parser.add_argument("--epochs", type=int, default=15)
 parser.add_argument("--seed", type=int, default=10)
 args = parser.parse_args()
+fpath = './blah'
+launch_config = {'overrides': {'args': [], 'artifacts': {'my-new-dataset:latest': {'id': 'QXJ0aWZhY3Q6MTg1MDUwMjY=', 'name': 'my-new-dataset:latest', 'entity': 'kylegoyette', 'project': 'launch-arti-demo'}, 'my-orig-dataset:latest': {'id': 'QXJ0aWZhY3Q6MTg1MDUwMjA=', 'name': 'my-new-dataset:latest', 'entity': 'kylegoyette', 'project': 'launch-arti-demo'}}, 'run_config': {'seed': 10, 'epochs': 15, 'dropout': 0.2, 'momentum': 0.1, 'batch_size': 128, 'architecture': 'CNN', 'learning_rate': 0.1}}}
+with open(fpath, "w") as fp:
+    try:
+        json.dump(launch_config, fp)
+    except:
+        pass
+
+# os.environ["WANDB_LAUNCH_CONFIG_PATH"] = fpath
+# os.environ["WANDB_LAUNCH"] = "True"
+
 
 run = wandb.init(
         project="launch-arti-demo",
@@ -26,12 +38,15 @@ run = wandb.init(
 
 np.random.seed(run.config.seed)
 
-dataset = run.use_artifact('my-orig-dataset:latest', ds_slot_name='dataset')
+dataset = run.use_artifact('my-orig-dataset:latest')
+model = run.use_artifact('my-orig-dataset:latest')
+print("FIUC", run.config._items)
 if dataset.name == 'my-new-dataset:v0':
     print("Using my-new-dataset")
     const = 0.5
 else:
     const = 0
+# const = 1
 displacement1 = np.random.uniform(0, 5) + const
 displacement2 = np.random.uniform(5, 10) - const
 
@@ -44,3 +59,5 @@ for step in range(5):
         "train_step": step*25
     })
 
+#print(run.config.dataset)
+#print(run.config.model)
