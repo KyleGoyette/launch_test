@@ -1,4 +1,2 @@
-#wandb
-#git+https://github.com/wandb/client@k/redo-arti-slot
-git+https://github.com/wandb/client@kyle/launch-arti-integration2
+wandb
 numpy
