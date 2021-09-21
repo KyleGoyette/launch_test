@@ -1,2 +1,2 @@
-wandb
+git+https://github.com/wandb/client.git@kyle-launch-arti-integration2
 numpy
