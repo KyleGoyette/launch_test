@@ -1,0 +1,5 @@
+[default]
+entity = kyle
+project = arti-test
+base_url = https://api.wandb.test
+
