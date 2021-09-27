@@ -1,0 +1,121 @@
+2021-08-13 11:21:38,533 INFO    MainThread:45343 [wandb_setup.py:_flush():69] setting env: {}
+2021-08-13 11:21:38,533 INFO    MainThread:45343 [wandb_setup.py:_flush():69] setting login settings: {}
+2021-08-13 11:21:38,533 INFO    MainThread:45343 [wandb_init.py:_log_setup():342] Logging user logs to /Users/kyle/cling/NewTest/wandb_launch_test/wandb/run-20210813_112138-i49x1iex/logs/debug.log
+2021-08-13 11:21:38,533 INFO    MainThread:45343 [wandb_init.py:_log_setup():343] Logging internal logs to /Users/kyle/cling/NewTest/wandb_launch_test/wandb/run-20210813_112138-i49x1iex/logs/debug-internal.log
+2021-08-13 11:21:38,533 INFO    MainThread:45343 [wandb_init.py:init():375] calling init triggers
+2021-08-13 11:21:38,533 INFO    MainThread:45343 [wandb_init.py:init():382] wandb.init called with sweep_config: {}
+config: {'learning_rate': 0.1, 'batch_size': 128, 'momentum': 0.1, 'dropout': 0.2, 'architecture': 'CNN', 'epochs': 15, 'seed': 10}
+2021-08-13 11:21:38,533 INFO    MainThread:45343 [wandb_init.py:init():424] starting backend
+2021-08-13 11:21:38,534 INFO    MainThread:45343 [backend.py:_multiprocessing_setup():72] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2021-08-13 11:21:38,542 INFO    MainThread:45343 [backend.py:ensure_launched():135] starting backend process...
+2021-08-13 11:21:38,545 INFO    MainThread:45343 [backend.py:ensure_launched():140] started backend process with pid: 45395
+2021-08-13 11:21:38,546 INFO    MainThread:45343 [wandb_init.py:init():429] backend started and connected
+2021-08-13 11:21:38,548 INFO    MainThread:45343 [wandb_init.py:init():477] updated telemetry
+2021-08-13 11:21:38,548 INFO    MainThread:45343 [wandb_init.py:init():500] communicating current version
+2021-08-13 11:21:39,106 INFO    MainThread:45343 [wandb_init.py:init():505] got version response upgrade_message: "wandb version 0.12.0 is available!  To upgrade, please run:\n $ pip install wandb --upgrade"
+delete_message: "wandb version 0.11.3.dev1 has been retired!  Please upgrade."
+
+2021-08-13 11:21:39,106 INFO    MainThread:45343 [wandb_init.py:init():513] communicating run to backend with 30 second timeout
+2021-08-13 11:21:39,272 INFO    MainThread:45343 [wandb_init.py:init():540] starting run threads in backend
+2021-08-13 11:21:39,390 INFO    MainThread:45343 [wandb_run.py:_console_start():1606] atexit reg
+2021-08-13 11:21:39,390 INFO    MainThread:45343 [wandb_run.py:_redirect():1480] redirect: SettingsConsole.REDIRECT
+2021-08-13 11:21:39,392 INFO    MainThread:45343 [wandb_run.py:_redirect():1485] Redirecting console.
+2021-08-13 11:21:39,393 INFO    MainThread:45343 [wandb_run.py:_redirect():1541] Redirects installed.
+2021-08-13 11:21:39,393 INFO    MainThread:45343 [wandb_init.py:init():565] run started, returning control to user process
+2021-08-13 11:21:39,610 ERROR   MainThread:45343 [internal_api.py:execute():133] 404 response executing GraphQL.
+2021-08-13 11:21:39,610 ERROR   MainThread:45343 [internal_api.py:execute():134] {"errors":[{"message":"failed to find run launch-arti-demo/i49x1iex","path":["useArtifact"]}],"data":{"useArtifact":null}}
+2021-08-13 11:21:39,614 INFO    MainThread:45343 [wandb_run.py:_atexit_cleanup():1576] got exitcode: 1
+2021-08-13 11:21:39,615 INFO    MainThread:45343 [wandb_run.py:_restore():1548] restore
+2021-08-13 11:21:41,919 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 2
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 5120
+  total_bytes: 5120
+}
+
+2021-08-13 11:21:42,095 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 2
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 5120
+  total_bytes: 5120
+}
+
+2021-08-13 11:21:42,304 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 5120
+  total_bytes: 9245
+}
+
+2021-08-13 11:21:42,415 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 5120
+  total_bytes: 9245
+}
+
+2021-08-13 11:21:42,516 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 9245
+  total_bytes: 9245
+}
+
+2021-08-13 11:21:42,618 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 9245
+  total_bytes: 9245
+}
+
+2021-08-13 11:21:42,721 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 9245
+  total_bytes: 9245
+}
+
+2021-08-13 11:21:42,827 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 9245
+  total_bytes: 9245
+}
+
+2021-08-13 11:21:43,072 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 9245
+  total_bytes: 9245
+}
+
+2021-08-13 11:21:43,177 INFO    MainThread:45343 [wandb_run.py:_wait_for_finish():1698] got exit ret: done: true
+exit_result {
+}
+file_counts {
+  wandb_count: 6
+  other_count: 1
+}
+pusher_stats {
+  uploaded_bytes: 9245
+  total_bytes: 9245
+}
+

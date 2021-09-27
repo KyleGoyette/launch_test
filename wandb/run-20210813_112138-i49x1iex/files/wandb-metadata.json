@@ -1,0 +1,22 @@
+{
+    "os": "Darwin-19.6.0-x86_64-i386-64bit",
+    "python": "3.6.8",
+    "heartbeatAt": "2021-08-13T18:21:39.277595",
+    "startedAt": "2021-08-13T18:21:38.530871",
+    "docker": null,
+    "cpu_count": 12,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "git@github.com:KyleGoyette/launch_test.git",
+        "commit": "ad3311550bf1ddf6097b9a17f9a73e3d2b67933b"
+    },
+    "email": "kdgoyette@gmail.com",
+    "root": "/Users/kyle/cling/NewTest/wandb_launch_test",
+    "host": "Kyles-MBP",
+    "username": "kyle",
+    "executable": "/Users/kyle/.pyenv/versions/3.6.8/Python.framework/Versions/3.6/bin/python"
+}
