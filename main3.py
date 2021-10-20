@@ -12,7 +12,7 @@ model = run.use_artifact("my-bad-model:latest", use_as="model")
 print(f"Using model {model.name}")
 run.config.model = model
 if model.name == "my-good-model:v0":
-    v1 = 1.0
+    v1 = 2.0
 else:
     v1 = 0.5
 for epoch in range(run.config.epochs):
