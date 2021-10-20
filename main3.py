@@ -9,7 +9,7 @@ config_dict = {
 run = wandb.init(project="launch-artifact-demo", config=config_dict)
 
 dataset = run.use_artifact("my-dataset:latest", use_as="dataset")
-model = run.use_artifact("my-okay-model:latest", use_as="model")
+model = run.use_artifact("my-bad-model:latest", use_as="model")
 
 print(f"Using model {model.name}")
 print(f"Using dataset: {dataset.name}")
