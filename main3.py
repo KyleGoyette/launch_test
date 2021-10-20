@@ -1,24 +1,23 @@
 import wandb
-import time
-run = wandb.init(project="arti-test")
-time.sleep(5)
-artifact = run.use_artifact('my-new-arti:latest', use_as="fork1")
-artifact2 = run.use_artifact('my-new-arti:latest', use_as="fork2")
-artifact3 = run.use_artifact('my-new-arti:latest')
-artifact4 = run.use_artifact('my-new-arti:latest')
-#artifact = wandb.Artifact('my-boom-arti', type='model', use_as="blah")
-#run.use_artifact(artifact)
-#artifact.wait()
-print(artifact.version)
-run.config.update({"arti": {"dataset": artifact}})
+import random
 
-run.config.garbage = artifact2
+config_dict = {
+    "lr": 0.01,
+    "decay": 1e-6,
+    "epochs": 10,
+}
+run = wandb.init(project="launch-artifact-demo", config=config_dict)
 
-print("ABJKDSA")
-print(run.config.arti["dataset"])
-print(run.config.garbage)
-# artifact2 = run.use_artifact('my-team-dataset2:v0', use_as="worst-dataset")
-# artifact3 = run.use_artifact('my-team-model:v0', use_as="model")
-# run.config.dataset = artifact
-# run.config.bad_dataset = artifact2
-# run.config.model = artifact3
+dataset = run.use_artifact("my-dataset:latest", use_as="dataset")
+model = run.use_artifact("my-okay-model:latest", use_as="model")
+
+print(f"Using model {model.name}")
+print(f"Using dataset: {dataset.name}")
+run.config.dataset = dataset
+for epoch in range(run.config.epochs):
+    if model.name == "my-good-model":
+        v1 = 1.0
+    else:
+        v1 = 0.5
+    wandb.log({"good_metric": random.random() * run.config.lr*v1 + run.config.param2*1e6})
+    wandb.log({"bad_metric": random.random() * run.config.lr*v1 + run.config.param2*1e6})
