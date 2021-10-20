@@ -19,5 +19,5 @@ for epoch in range(run.config.epochs):
         v1 = 1.0
     else:
         v1 = 0.5
-    wandb.log({"good_metric": random.random() * run.config.lr*v1 + run.config.param2*1e6})
-    wandb.log({"bad_metric": random.random() * run.config.lr*v1 + run.config.param2*1e6})
+    wandb.log({"good_metric": epoch*(random.random() * run.config.lr*v1 + run.config.decay*1e6)})
+    wandb.log({"bad_metric": 1 - epoch*(random.random() * run.config.lr*v1 + run.config.decay*1e6)})
