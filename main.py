@@ -1,5 +1,10 @@
+import argparse
 import wandb
 
-run = wandb.init(project="stab-stab", name="william-shatner")
-for i in range(10):
-    run.log({"dead-babysitters": i})
+parser = argparse.ArgumentParser()
+parser.description = 'Transform an artifact'
+parser.add_argument('--input_num', type=float, required=True)
+
+args = parser.parse_args()
+with wandb.init(config=args, project='shawn_add') as run:
+    run.summary['output'] = run.config.input_num + 3

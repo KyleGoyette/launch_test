@@ -2,7 +2,7 @@ import wandb
 import numpy as np
 import time
 
-run = wandb.init(project="launch-artifact-demo")
+run = wandb.init(project="triggers-demo")
 
 artifact = wandb.Artifact('my-dataset', type='dataset')
 print(artifact.name)
