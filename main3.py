@@ -15,7 +15,7 @@ run = wandb.init(project="triggers-demo", config=config_dict)
 model = run.use_artifact("my-bad-model:latest", use_as="model")
 dataset = run.use_artifact("my-dataset:latest", use_as="dataset")
 print()
-print(f"Using model {model.__dict__}")
+print(f"Using model {model.name}")
 print()
 
 run.config.model = model
