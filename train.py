@@ -7,20 +7,25 @@ config_dict = {
     "lr": 0.01,
     "decay": 1e-6,
     "epochs": 100,
+    "model": "wandb-artifact://https://api.wandb.ai/kylegoyette/model_registry_ex/mnist_ds:v6"
 }
 
 
 run = wandb.init(project="triggers-demo", config=config_dict)
 
-model = run.use_artifact("my-bad-model:latest", use_as="model")
-dataset = run.use_artifact("my-dataset:latest", use_as="dataset")
-print()
-print(f"Using model {model.name}")
+# model = run.use_artifact("my-bad-model:latest")
+# dataset = run.use_artifact("my-dataset:latest", use_as="dataset")
+
+#run.config.model = "wandb-artifact://my-bad-model:latest"
+# run.config.dataset = "wandb-artifact://my-dataset:latest"
+
+print("fork", run.config.model)
+print(f"Using model {run.config.model.name}")
 print()
 
-run.config.model = model
-run.config.dataset = dataset
-if "my-good-model" in model.name:
+#run.config.model = model
+#run.config.dataset = dataset
+if "my-good-model" in run.config.model.name:
     v1 = 2.0
 else:
     v1 = 0.5
