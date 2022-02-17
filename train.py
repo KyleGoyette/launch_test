@@ -2,11 +2,15 @@ import wandb
 import time
 import random
 import re
-print("Running demo script")
+print("Running demo script2")
 config_dict = {
     "lr": 0.01,
     "decay": 1e-6,
-    "epochs": 100,
+    "epochs": 10,
+    "what": {
+        "blah": 2
+    },
+    "huh": 123456
     #"model": "wandb-artifact://https://api.wandb.ai/kylegoyette/model_registry_ex/mnist_ds:v6"
 }
 
@@ -31,5 +35,6 @@ run = wandb.init(project="triggers-demo", config=config_dict)
     # v1 = 0.5
 v1 = 1
 for epoch in range(run.config.epochs):
+    time.sleep(1)
     wandb.log({"good_metric": random.random()*10*run.config.lr*v1*epoch + run.config.decay*1e6})
     wandb.log({"bad_metric": 1 - epoch*(random.random()*10*run.config.lr*v1*epoch + run.config.decay*1e6)})
