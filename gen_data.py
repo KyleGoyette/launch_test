@@ -10,6 +10,6 @@ artifact.add_file('my-dataset.txt')
 run.log_artifact(artifact)
 artifact.wait()
 #print(artifact._sequence_name)
-run.config.dataset = artifact
+#run.config.dataset = artifact
 run.log_code()
 #wandb.log({"stuff": 'asdf'})
