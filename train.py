@@ -7,6 +7,7 @@ config_dict = {
     "lr": 0.01,
     "decay": 1e-6,
     "epochs": 10,
+    "language": "en",
     "model": "wandb-artifact://kylegoyette/triggers-demo/my-dataset:latest"
 }
 
